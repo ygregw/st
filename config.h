@@ -5,8 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "monospace:size=12:antialias=true:autohint=true";
-static int borderpx = 4;
+static char *font = "monospace:pixelsize=12:antialias=true:autohint=true";
+static char *font2[] = {
+	"NotoColorEmoji:size=10:antialias=true:autohint=true",
+};
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -94,7 +97,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.85;
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -247,6 +250,7 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
+
 
 /*
  * Special keys (change & recompile st.info accordingly)
